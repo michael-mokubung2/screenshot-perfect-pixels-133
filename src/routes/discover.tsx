@@ -11,7 +11,7 @@ export const Route = createFileRoute("/discover")({
       { property: "og:description", content: "Filter curated anime by genre, year and mood." },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>) => ({ q: typeof s.q === "string" ? s.q : undefined }),
+  validateSearch: (s: Record<string, unknown>): { q?: string } => (typeof s["q"] === "string" ? { q: s["q"] } : {}),
   component: Page,
 });
 

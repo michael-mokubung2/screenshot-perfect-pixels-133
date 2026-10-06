@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AffiliatesRouteImport } from './routes/affiliates'
+import { Route as CommunitiesRouteImport } from './routes/communities'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreatorsRouteImport } from './routes/creators'
+import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as GuidesRouteImport } from './routes/guides'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as WatchRouteImport } from './routes/watch'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliatesRoute = AffiliatesRouteImport.update({
+  id: '/affiliates',
+  path: '/affiliates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunitiesRoute = CommunitiesRouteImport.update({
+  id: '/communities',
+  path: '/communities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreatorsRoute = CreatorsRouteImport.update({
+  id: '/creators',
+  path: '/creators',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesRoute = GuidesRouteImport.update({
+  id: '/guides',
+  path: '/guides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WatchRoute = WatchRouteImport.update({
+  id: '/watch',
+  path: '/watch',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/communities': typeof CommunitiesRoute
+  '/contact': typeof ContactRoute
+  '/creators': typeof CreatorsRoute
+  '/discover': typeof DiscoverRoute
+  '/guides': typeof GuidesRoute
+  '/privacy': typeof PrivacyRoute
+  '/watch': typeof WatchRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/communities': typeof CommunitiesRoute
+  '/contact': typeof ContactRoute
+  '/creators': typeof CreatorsRoute
+  '/discover': typeof DiscoverRoute
+  '/guides': typeof GuidesRoute
+  '/privacy': typeof PrivacyRoute
+  '/watch': typeof WatchRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/affiliates': typeof AffiliatesRoute
+  '/communities': typeof CommunitiesRoute
+  '/contact': typeof ContactRoute
+  '/creators': typeof CreatorsRoute
+  '/discover': typeof DiscoverRoute
+  '/guides': typeof GuidesRoute
+  '/privacy': typeof PrivacyRoute
+  '/watch': typeof WatchRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/communities'
+    | '/contact'
+    | '/creators'
+    | '/discover'
+    | '/guides'
+    | '/privacy'
+    | '/watch'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/communities'
+    | '/contact'
+    | '/creators'
+    | '/discover'
+    | '/guides'
+    | '/privacy'
+    | '/watch'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/affiliates'
+    | '/communities'
+    | '/contact'
+    | '/creators'
+    | '/discover'
+    | '/guides'
+    | '/privacy'
+    | '/watch'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AffiliatesRoute: typeof AffiliatesRoute
+  CommunitiesRoute: typeof CommunitiesRoute
+  ContactRoute: typeof ContactRoute
+  CreatorsRoute: typeof CreatorsRoute
+  DiscoverRoute: typeof DiscoverRoute
+  GuidesRoute: typeof GuidesRoute
+  PrivacyRoute: typeof PrivacyRoute
+  WatchRoute: typeof WatchRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliates': {
+      id: '/affiliates'
+      path: '/affiliates'
+      fullPath: '/affiliates'
+      preLoaderRoute: typeof AffiliatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/communities': {
+      id: '/communities'
+      path: '/communities'
+      fullPath: '/communities'
+      preLoaderRoute: typeof CommunitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creators': {
+      id: '/creators'
+      path: '/creators'
+      fullPath: '/creators'
+      preLoaderRoute: typeof CreatorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides': {
+      id: '/guides'
+      path: '/guides'
+      fullPath: '/guides'
+      preLoaderRoute: typeof GuidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/watch': {
+      id: '/watch'
+      path: '/watch'
+      fullPath: '/watch'
+      preLoaderRoute: typeof WatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AffiliatesRoute: AffiliatesRoute,
+  CommunitiesRoute: CommunitiesRoute,
+  ContactRoute: ContactRoute,
+  CreatorsRoute: CreatorsRoute,
+  DiscoverRoute: DiscoverRoute,
+  GuidesRoute: GuidesRoute,
+  PrivacyRoute: PrivacyRoute,
+  WatchRoute: WatchRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
